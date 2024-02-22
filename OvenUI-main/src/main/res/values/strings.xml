@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">OvenApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_cook_top">CookTop</string>
+    <string name="title_activity_oven">Oven</string>
+    <string name="title_activity_heat_options">HeatOptions</string>
+    <string name="title_activity_status">Status</string>
+
+    <string name="mainButCookTop">CookTop</string>
+    <string name="mainButOven">Oven</string>
+    <string name="headingBurners">Pick a burner</string>
+
+    <string name="menu_oven_options">Oven options</string>
+    <string name="menu_pre_options">Premade options</string>
+
+    <string name="grill">Grill</string>
+    <string name="upLow">Up-low element</string>
+    <string name="defrost">Defrost</string>
+    <string name="warmer">Warmer</string>
+
+    <string name="roast_meat">Roasted meat</string>
+    <string name="fish">Fish</string>
+    <string name="vegetable">Vegetables</string>
+    <string name="pizza">Pizza</string>
+    <string name="sweet">Sweets</string>
+    <string name="cake">Cake</string>
+
+    <string name="temperature">Temperature</string>
+    <string name="stop_timer">Stop Timer</string>
+
+
+</resources>

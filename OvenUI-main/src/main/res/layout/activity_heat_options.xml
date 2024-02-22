@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".HeatOptions">
+
+    <include
+        android:id="@+id/heat_options_toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heat_options_toolbar" />
+
+    <TextView
+        android:id="@+id/timer_title"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/stop_timer"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_temperature_text" />
+
+    <ImageView
+        android:id="@+id/plus_temp_but"
+        android:onClick="onClickAddTemp"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/set_temperature_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/ic_plus" />
+
+    <TextView
+        android:id="@+id/set_temperature_text"
+        android:layout_width="35dp"
+        android:textColor="@color/black"
+        android:layout_height="25dp"
+        android:layout_marginTop="60dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/minus_temp_but"
+        android:onClick="onClickAddTemp"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_width="60dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/set_temperature_text"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/ic_minus" />
+
+    <TextView
+        android:id="@+id/set_timer_text"
+        android:textColor="@color/black"
+        android:layout_width="81dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/heat_option_ok"
+            android:layout_width="78dp"
+            android:onClick="onClickBegin"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_check_tick" />
+
+        <ImageView
+            android:id="@+id/heat_option_cancel"
+            android:layout_width="78dp"
+            android:onClick="onClickAbort"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cancel" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/plus_five_timer"
+        android:layout_width="52dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="92dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="onClickAddTimer"
+        android:background="@drawable/rounded_gray_button"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="5'"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/set_timer_text"
+        app:layout_constraintTop_toBottomOf="@+id/timer_title" />
+
+    <TextView
+        android:id="@+id/minus_five_timer"
+        android:layout_width="52dp"
+        android:layout_height="43dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="onClickAddTimer"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/rounded_gray_button"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="-5'"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/set_timer_text"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_title" />
+
+    <TextView
+        android:id="@+id/plus_one_timer"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/rounded_gray_button"
+        android:gravity="center"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="onClickAddTimer"
+        android:text="1'"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/set_timer_text"
+        app:layout_constraintTop_toBottomOf="@+id/timer_title" />
+
+    <TextView
+        android:id="@+id/minus_one_timer"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="onClickAddTimer"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/rounded_gray_button"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="-1'"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/timer_title"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_title" />
+
+    <SeekBar
+        android:id="@+id/temp_seek_bar"
+        android:layout_width="325dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/set_temperature_text" />
+
+    <Button
+        android:id="@+id/add_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/app_orange"
+        android:onClick="onClickTimerButton"
+        android:text="Add Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp_seek_bar" />
+
+    <Button
+        android:id="@+id/remove_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="508dp"
+        android:backgroundTint="@color/app_orange"
+        android:onClick="onClickTimerButtonF"
+        android:text="Remove Timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heat_options_toolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
